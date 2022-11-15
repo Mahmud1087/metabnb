@@ -4,16 +4,7 @@ import { Link } from "react-router-dom"
 import Button from "./Button"
 import ConnectWallet from "./ConnectWallet"
 
-export default function Navbar() {
-    
-    const [open, setOpen] = useState(true)
-
-    function connectWalletToggle() {
-        setOpen(prevOpen => !prevOpen)
-        // return (
-        //     open ? <ConnectWallet/> : ""
-        // )
-    }
+export default function Navbar({ setOpen }) {
     
     return (
         <div className="navbar">            
@@ -33,7 +24,9 @@ export default function Navbar() {
                 text={"Connect wallet"}
                 bgColor={"linear-gradient(90deg, #A02279 11.45%, #A02279 11.45%)"}
                 color={"white"}
-                onClick={connectWalletToggle} 
+                onClick={function() {
+                    setOpen(prevState => !prevState)
+                }} 
             />
         </div>
     )

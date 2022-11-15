@@ -287,6 +287,77 @@ body {
     width: 80%;
 }
 
+.connectwallet {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(163, 163, 163, 0.3);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.connectwallet--modal {
+    width: 37.5rem;
+    min-height: 20.375rem;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3),
+                -2px -2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.modal--text_closeBtn {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #D7D7D7;
+}
+
+.modal--text_closeBtn p {
+    font-size: 1.5rem;
+    color: #333333;
+    font-weight: 700;
+}
+
+.modal--text_closeBtn img {
+    width: 1.5rem;
+    cursor: pointer;
+}
+
+.modal--wallets {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+.modal--wallets p {
+    font-size: 1rem;
+    color: #333333;
+    font-weight: 400;
+}
+
+.wallets {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #CFD8DC;
+    background-color: #F8F9FA;
+    border-radius: 0.75rem;
+    cursor: pointer;
+}
+
+.wallets--image {
+    height: 2.75rem;
+}
+
+.wallets--slide {
+    width: 1.25rem;
+    height: 1.25rem;
+}
 
 
 /* MEDIA QUERIES */
@@ -448,5 +519,9 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .connectwallet--modal {
+        width: 21rem;
     }
 }
