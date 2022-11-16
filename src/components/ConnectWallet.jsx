@@ -3,7 +3,7 @@ import arrowSlide from "../assets/Down Chevron.png"
 import metamask from "../assets/Frame 195.png"
 import walletConnect from "../assets/Frame 195 (1).png"
 
-export default function ConnectWallet({setOpen}) {
+export default function ConnectWallet({ modalBtnToggle }) {
     return (
         <dialog open className="connectwallet">
             <div className="connectwallet--modal">
@@ -11,9 +11,7 @@ export default function ConnectWallet({setOpen}) {
                     <p>Connect Wallet</p>
                     <img 
                         src={closeBtn}
-                        onClick={function() {
-                            setOpen(prevState => !prevState)
-                        }}
+                        onClick={modalBtnToggle}
                     />
                 </div>
                 

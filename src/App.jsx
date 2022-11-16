@@ -10,14 +10,22 @@ import MobileMenuList from "./components/MobileMenuList";
 
 export default function App() {
     
-    const [open, setOpen] = useState(false)
-    const [menuCloseBtn, setMenuCloseBtn] = useState(false)
+    const [modalBtn, setModalBtn] = useState(false)
+    const [menuBtn, setMenuBtn] = useState(false)
+
+    function modalBtnClick() {
+        setModalBtn(prevModalBtn => !prevModalBtn)
+    }
+
+    function menuBtnClick() {
+        setMenuBtn(prevMenu => !prevMenu)
+    }
 
     return (
         <div>
-            {menuCloseBtn && <MobileMenuList setMenuCloseBtn={setMenuCloseBtn}  setOpen={setOpen} />}
-            {open && <ConnectWallet setOpen={setOpen}/>}
-            <Navbar setOpen={setOpen} setMenuCloseBtn={setMenuCloseBtn}/>
+            {menuBtn && <MobileMenuList menuBtnToggle={menuBtnClick}  modalBtnToggle={modalBtnClick} />}
+            {modalBtn && <ConnectWallet modalBtnToggle={modalBtnClick}/>}
+            <Navbar modalBtnToggle={modalBtnClick} menuBtnToggle={menuBtnClick}/>
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/placetostay" element={<PlaceToStay />} />

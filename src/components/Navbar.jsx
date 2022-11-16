@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import Button from "./Button"
 import ConnectWallet from "./ConnectWallet"
 
-export default function Navbar({ setOpen, setMenuCloseBtn }) {
+export default function Navbar({ modalBtnToggle, menuBtnToggle }) {
     
     return (
         <div className="navbar">            
@@ -25,14 +25,12 @@ export default function Navbar({ setOpen, setMenuCloseBtn }) {
                     text={"Connect wallet"}
                     bgColor={"linear-gradient(90deg, #A02279 11.45%, #A02279 11.45%)"}
                     color={"white"}
-                    onClick={function() {
-                        setOpen(prevState => !prevState)
-                    }}
+                    onClick={modalBtnToggle}
                 />
             </div>
 
             <button className="hamburger_menu" 
-                onClick={() => setMenuCloseBtn(prevMenuState => !prevMenuState)}>
+                onClick={menuBtnToggle}>
                     <span className="hamburger top"></span>
                     <span className="hamburger middle"></span>
                     <span className="hamburger bottom"></span>
